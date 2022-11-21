@@ -162,7 +162,7 @@ const Itsoftform = () => {
       if (resp.status === 300) {
         alert("user Already registered");
         
-          setIsVisible(isVisible = 1);
+          setIsVisible(isVisible - 2);
       
       }
     } catch (error) {
