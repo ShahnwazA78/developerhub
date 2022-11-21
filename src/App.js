@@ -36,16 +36,19 @@ import Fresherform from "./Components/Fresherform";
 import ChannelForm from "./Components/ChannelForm";
 import TrainerForm from "./Components/TrainerForm";
 
+// import { UserContext } from "./UserContext";
+import { useRoutes } from "react-router-dom";
+import routes from "./routes";
+
 function App() {
   const [display, setDisplay] = useState("block");
 
   const location = useLocation();
 
+  const routing = useRoutes(routes);
+
   return (
     <div className="App">
-      {/* <ScrollToTop smooth width="40" /> */}
-      <NavComponent />
-
       {location.pathname === "/" ? (
         <>
           <div className="ad_container" style={{ display: display }}>
@@ -73,40 +76,9 @@ function App() {
         ""
       )}
 
-      <Routes>
-        <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/signin" element={<Signin />}></Route>
-        <Route path="/forgot" element={<Forgot />}></Route>
-        <Route path="/community" element={<Community />}></Route>
-        <Route path="/deactivate" element={<Deactivate />}></Route>
-        <Route path="/software" element={<Software />}></Route>
-        <Route path="/corporate" element={<Corporate />}></Route>
-        <Route path="/fresher" element={<Fresher />}></Route>
-        <Route path="/feedback" element={<Feedback />}></Route>
-        <Route path="/contact" element={<ContactUs />}></Route>
-        <Route path="/about" element={<AboutUs />}></Route>
-        <Route path="/job" element={<Jobs />}></Route>
-        <Route path="/form" element={<FormBasic />}></Route>
-        <Route path="/blockchain" element={<Blockchain />}></Route>
-        <Route path="/ar-vr" element={<Ar_vr />}></Route>
-        <Route path="/meta" element={<MetaPage />}></Route>
-        <Route path="/aiml" element={<Aiml />}></Route>
-        <Route path="/adminForm" element={<AdminForm />}></Route>
-        <Route path="/coming" element={<ComingSoon />}></Route>
-        <Route path="/University" element={<University />}></Route>
-        <Route path="/forum" element={<Forum />}></Route>
-        <Route path="/forgot" element={<Forum />}></Route>
-        <Route path="/univ_form" element={<Universityform />}></Route>
-        <Route path="/ITsoft_form" element={<Itsoftform />}></Route>
-        <Route path="/fresher_form" element={<Fresherform />}></Route>
-        <Route path="/Channel_form" element={<ChannelForm />}></Route>
-        <Route path="/Trainer_form" element={<TrainerForm />}></Route>
-      </Routes>
-
-      <Footer />
+      {routing}
     </div>
   );
 }
 
 export default App;
-
