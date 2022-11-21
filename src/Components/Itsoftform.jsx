@@ -147,7 +147,7 @@ const Itsoftform = () => {
         body: JSON.stringify(body),
       };
 
-      const resp = await fetch(
+       const resp = await fetch(
         "https://unbouncedeveloper.herokuapp.com/UniversityRegistration",
         requestOptions
       );
@@ -162,8 +162,7 @@ const Itsoftform = () => {
       if (resp.status === 300) {
         alert("user Already registered");
         
-          setIsVisible(isVisible - 1);
-          setIsVisible(isVisible - 1);
+          setIsVisible(isVisible + 1);
       
       }
     } catch (error) {
