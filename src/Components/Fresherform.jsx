@@ -148,7 +148,7 @@ const Fresherform = () => {
       };
 
       const resp = await fetch(
-        "http://localhost:3301/ITRegistration",
+        "https://unbouncedeveloper.herokuapp.com/ITRegistration",
         requestOptions
       );
 
