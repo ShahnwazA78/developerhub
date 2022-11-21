@@ -171,7 +171,7 @@ const Universityform = () => {
       };
 
       const resp = await fetch(
-        "http://localhost:3302/UniversityRegistration",
+        "https://unbouncedeveloper.herokuapp.com/UniversityRegistration",
         requestOptions
       );
 
