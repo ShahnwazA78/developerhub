@@ -171,15 +171,22 @@ const Universityform = () => {
       };
 
       const resp = await fetch(
-        "http://localhost:3301/UniversityRegistration",
+        "https://unbouncedeveloper.herokuapp.com/UniversityRegistration",
         requestOptions
       );
 
       if (resp.status === 200) {
         alert("register success");
+   
+          setIsVisible(isVisible + 1);
+    
+
       }
       if (resp.status === 300) {
         alert("user Already registered");
+        
+          setIsVisible(isVisible + 1);
+      
       }
     } catch (error) {
       console.log("error=>", error);
