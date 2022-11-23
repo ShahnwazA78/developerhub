@@ -177,16 +177,13 @@ const Universityform = () => {
 
       if (resp.status === 200) {
         alert("register success");
-   
-          setIsVisible(isVisible + 1);
-    
 
+        setIsVisible(isVisible + 1);
       }
       if (resp.status === 300) {
         alert("user Already registered");
-        
-          setIsVisible(isVisible = 1);
-      
+
+        setIsVisible((isVisible = 1));
       }
     } catch (error) {
       console.log("error=>", error);
