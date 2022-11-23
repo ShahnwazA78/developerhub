@@ -15,6 +15,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import Checkbox from "@mui/material/Checkbox";
 import Chip from "@mui/material/Chip";
 import Dialog from "@mui/material/Dialog";
+import {useNavigate} from "react-router-dom"
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -54,6 +55,9 @@ function getStyles2(name, personName, theme) {
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const Itsoftform = () => {
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -159,11 +163,9 @@ const Itsoftform = () => {
     
 
       }
+      
       if (resp.status === 300) {
         alert("user Already registered");
-        
-          setIsVisible(isVisible + 1);
-      
       }
     } catch (error) {
       console.log("error=>", error);
